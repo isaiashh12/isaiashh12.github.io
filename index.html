@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuentra los Corazones Ocultos 💕</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Pantalla de inicio -->
+    <div id="start-screen" class="screen active">
+        <div class="start-content">  
+  
+
+            <h1 class="game-title">Amouurr... Feliz 9 meses, mi niña ❤️✨ gracias por hacerme tan feliz cada día 😍. Te amo con todo mi corazón y quiero seguir a tu lado siempre 💕🔥</h1>
+            <div class="heart-animation">
+                <div class="floating-heart">💖</div>
+                <div class="floating-heart">💕</div>
+                <div class="floating-heart">💗</div>
+            </div>
+            <p class="game-description">
+                Amor mío 💖, este es un jueguito especial para ti ✨. Quiero que encuentres los corazones ❤️ escondidos en cada parte, porque en ellos está guardado un mensaje para ti 💌💞. Lo hice con mucho amor para que te diviertas y te entretengas un rato y tambien para que recuerdes cuánto te amo 💑🌹<br>
+                ten en cuenta que algunos corazones son visibles y algunos invisibles... <br>
+                Con Amor Chay Te Amo❤️
+            </p>
+            <div class="difficulty-selection">
+                <h3>Elige tu nivel:</h3>
+                <button class="difficulty-btn" data-level="easy">
+                    <i class="fas fa-heart"></i>
+                    Encontrar 8 corazones
+                </button>
+                <button class="difficulty-btn" data-level="medium">
+                    <i class="fas fa-heart"></i>
+                    Encontrar 12 corazones
+                </button>
+                <button class="difficulty-btn" data-level="hard">
+                    <i class="fas fa-heart"></i>
+                    Encontrar 16 corazones 
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla del juego -->
+    <div id="game-screen" class="screen">
+        <!-- Interfaz de usuario (Modificada ) -->
+        <div class="game-ui">
+            <div class="ui-left">
+                <div class="hearts-counter">
+                    <i class="fas fa-heart"></i>
+                    <span id="found-count">0</span> / <span id="total-count">0</span>
+                </div>
+                <div class="timer">
+                    <i class="fas fa-clock"></i>
+                    <span id="timer-display">00:00</span>
+                </div>
+            </div>
+            <div class="ui-right">
+                <!-- Botón de sonido movido aquí -->
+                <button id="sound-toggle" class="ui-button" title="Activar/Desactivar sonido">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <button id="restart-btn" class="ui-button" title="Reiniciar">
+                    <i class="fas fa-redo"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Área del juego -->
+        <div id="game-area" class="game-area">
+            <!-- Los corazones se generarán dinámicamente aquí -->
+        </div>
+
+        <!-- Barra de progreso -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <div class="progress-text">Progreso</div>
+        </div>
+    </div>
+
+    <!-- Pantalla de pausa (Eliminada del flujo, pero la dejamos por si la quieres reusar) -->
+    <div id="pause-screen" class="screen overlay">
+        <!-- Contenido eliminado ya que no hay botón de pausa -->
+    </div>
+
+    <!-- Pantalla de victoria -->
+    <div id="victory-screen" class="screen overlay">
+        <div class="victory-content">
+            <div class="victory-animation">
+                <div class="celebration-hearts">
+                    <div class="celebration-heart">💖</div>
+                    <div class="celebration-heart">💕</div>
+                    <div class="celebration-heart">💗</div>
+                    <div class="celebration-heart">💝</div>
+                    <div class="celebration-heart">💘</div>
+                </div>
+            </div>
+            
+            <h2 class="victory-title">¡Felicidades Amorr!</h2>
+            <p class="victory-subtitle">Has encontrado todos los corazones</p>
+            
+            <div class="stats">
+                <div class="stat">
+                    <i class="fas fa-heart"></i>
+                    <span id="final-hearts">0</span> corazones
+                </div>
+                <div class="stat">
+                    <i class="fas fa-clock"></i>
+                    <span id="final-time">00:00</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-star"></i>
+                    <span id="final-score">0</span> puntos
+                </div>
+            </div>
+
+            <div class="love-message">
+                <div class="message-container">
+                    <h3>Mensaje Especial</h3>
+                    <p id="romantic-message" class="romantic-text">
+                        Como cada corazón que encontraste en este juego, 
+                        cada día contigo es un tesoro que descubro. 
+                        Tu amor ilumina mi mundo y hace que cada momento sea especial.
+                        ¡Gracias por ser mi compañera de aventuras y mi amor verdadero! 💕
+                    </p>
+                </div>
+            </div>
+
+                        <div class="victory-buttons">
+                <button id="play-again-btn" class="game-button primary">
+                    <i class="fas fa-redo"></i>
+                    Jugar de Nuevo
+                </button>
+                <button id="menu-from-victory-btn" class="game-button">
+                    <i class="fas fa-home"></i>
+                    Menú Principal
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Efectos de partículas -->
+    <div id="particles-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
